@@ -26,7 +26,7 @@ class Province {
     
 
     get name(){return this._name;}
-    get producers(){return this._producers.slice();}
+    get producers(){return this._producers;}
     get totalProduction(){return this._totalProduction;}
     set totalProduction(arg){this._totalProduction = arg;}
     get demand(){return this._demand;}
@@ -53,7 +53,7 @@ class Province {
         .forEach(p => {
             const contribution = Math.min(remainingDemand, p.production);
             remainingDemand -= contribution;
-            result += contribution;
+            result += contribution * p.cost;
         });
         return result;
     }
