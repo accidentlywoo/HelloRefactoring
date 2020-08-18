@@ -30,7 +30,7 @@ class Province {
     get totalProduction(){return this._totalProduction;}
     set totalProduction(arg){this._totalProduction = arg;}
     get demand(){return this._demand;}
-    set demand(arg){return this._demand = paeseInt(arg);}
+    set demand(arg){return this._demand = parseInt(arg);}
     get price(){return this._price;}
     set price(arg){this._price = parseInt(arg);}
     get shortfall(){
