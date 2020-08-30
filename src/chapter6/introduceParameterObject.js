@@ -8,9 +8,9 @@ const station = {
         {temp: 51, time:"2016-11-10 09:50"}
     ]
 }
-function readingsOutsideRange(station, min, max) {
+function readingsOutsideRange(station, range) {
     return station.readings
-    .filter(r => r.temp < min || r.temp > max);
+    .filter(r => r.temp < range.min || r.temp > range.max);
 }
 
 class NumberRange {
@@ -21,6 +21,6 @@ class NumberRange {
     get max() {return this._data.max;}
 }
 
+const range = new NumberRange(operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
 alert = readingsOutsideRange(station, 
-    operatingPlan.temperatureFloor, // 최저온도
-    operatingPlan.temperatureCeiling); // 최고온도
+    range);
