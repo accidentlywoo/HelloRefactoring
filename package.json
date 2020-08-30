@@ -2,12 +2,9 @@
   "name": "tdd",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "directories": {
-    "test": "test"
-  },
+  "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha \"test/**/*.js\" --recursive"
   },
   "keywords": [],
   "author": "",
