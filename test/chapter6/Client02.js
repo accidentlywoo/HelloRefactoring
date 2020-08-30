@@ -1,6 +1,6 @@
-const { defaultOwner } = require("../../src/chaper6/combineFunctionsIntoClass");
+const { reading } = require("../../src/chapter6/combineFunctionsIntoClass");
 
-const aReading = acquireReading();
-const base = (baseRate(aReading.month, aReading.year) *aReading.quantity);
+const aReading = reading;
+// const base = (baseRate(aReading.month, aReading.year) *aReading.quantity);
 
-const taxableCharge = Math.max(0, base - taxThreshold(aReading.year));
+// const taxableCharge = Math.max(0, base - taxThreshold(aReading.year));

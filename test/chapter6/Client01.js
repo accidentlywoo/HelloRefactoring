@@ -1,4 +1,4 @@
-const { defaultOwner } = require("../../src/chaper6/combineFunctionsIntoClass");
+const {reading} = require("../../src/chapter6/combineFunctionsIntoClass");
 
-const aReading = acquireReading();
-const baseCharge = baseRate(aReading.month, aReading.year) * aReading.quantity;
+const aReading = reading;
+//const baseCharge = baseRate(aReading.month, aReading.year) * aReading.quantity;

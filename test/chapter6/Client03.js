@@ -1,6 +1,16 @@
-const aReading = acquireReading();
-const basicChargeAmount = calculateBaseCharge(aReading);
+const {reading, enrichReading} = require("../../src/chapter6/combineFunctionsIntoClass");
 
-function calculateBaseCharge(aReading) {
-    return baseRate(aReading.month, aReading.year) * aReading.quantity;
-}
+const rawReading = reading;
+const aReading = enrichReading(rawReading);
+const basicChargeAmount = aReading.baseCharge;
+
+const { describe } = require("mocha");
+const { assert, expect } = require("chai");
+describe('너모 어려웡!', () => {
+    it('check reading unchanged', () => {
+        const baseReading = {customer: "ivan", quantity: 15, month: 5, year: 2017};
+        const oracle = _.cloneDeep(baseReading);
+        enrichReading(baseReading);
+        assert.deepEqual(baseReading, oracle);
+    });
+});
