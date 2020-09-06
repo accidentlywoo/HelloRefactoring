@@ -13,7 +13,7 @@ class Person{
     }
 
     get name(){return this._name;}
-    get courses(){return this._courses.slice()}
+    get courses(){return this._courses.slice();}
 }
 class Course{
     constructor(name, isAdvanced){
