@@ -26,7 +26,13 @@ class CustomerData{
     constructor(data){
         this._data = data;
     }
+    setUsage(customerID, year, month, amount){
+        this._data[customerID].usages[year][month] = amount;
+    }
 }
 function getCustomerData(){return customerData;}
 function getRawDataOfCustomers(){return customerData._data;}
 function setRawDataOfCustomers(arg){customerData = new CustomerData(arg);}
+
+// 쓰기 예
+getCustomerData().setUsage(customerID, year, month,amount);
