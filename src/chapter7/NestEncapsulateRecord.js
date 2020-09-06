@@ -20,8 +20,13 @@ function setRawDataOfCustomers(arg){customerData = new CustomerData(arg);}
 // 쓰기 예
 getCustomerData().setUsage(customerID, year, month,amount);
 
+// function compareUsage (customerID, laterYear, month){
+//     const later = getCustomerData().usages(customerID, laterYear, month);
+//     const earlier = getCustomerData().usages(customerID, laterYear-1, month);
+//     return {laterAmount: later, change: later - earlier};
+// }
 function compareUsage (customerID, laterYear, month){
-    const later = getCustomerData().usages(customerID, laterYear, month);
-    const earlier = getCustomerData().usages(customerID, laterYear-1, month);
+    const later = getCustomerData().rawData[customerID].usages[laterYear][month];
+    const earlier = getCustomerData().rawData[customerID].usages[laterYear-1][month];
     return {laterAmount: later, change: later - earlier};
 }
