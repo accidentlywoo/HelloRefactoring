@@ -1,4 +1,5 @@
-import {Organization} from "./Organization";
+import Organization from './Organization';
+// const Organization = require('/Organization.js');
 
 // const organization = {name: "애크미 구스베리", country: "GB"};
 
@@ -7,11 +8,11 @@ import {Organization} from "./Organization";
 // let result;
 // result+= '<h1>${getRawDataOfOrganization().name}</h1>';
 // getRawDataOfOrganization().name = newName;
-const organization = new Organization({name: "애크미 구스베리", country: "GB"});
+// const organization = new Organization({name: "애크미 구스베리", country: "GB"});
 // function getRawDataOfOrganization(){return organization._data;}
-function getOrganization(){return organization;}
+// function getOrganization(){return organization;}
 
 let newName = 'Woo 뭐야 왜이렇게 쓰는거야';
-getOrganization().name = newName;
+Organization.getOrganization().name = newName;
 
-result += `<h1>${getOrganization().name}</h1>`;
+// result += '<h1>${getOrganization().name}</h1>';
