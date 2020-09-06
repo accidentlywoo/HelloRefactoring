@@ -1,4 +1,5 @@
 let customerData = require('./CustomerData.json');
+let lodash =  require('lodash');
 
 // 쓰기 예
 console.log(customerData[1920]);//오예 된다!
@@ -26,12 +27,13 @@ class CustomerData{
     constructor(data){
         this._data = data;
     }
+    get rawData(){return _.cloneDeep(this._data)}
     setUsage(customerID, year, month, amount){
         this._data[customerID].usages[year][month] = amount;
     }
 }
 function getCustomerData(){return customerData;}
-function getRawDataOfCustomers(){return customerData._data;}
+function getRawDataOfCustomers(){return customerData.rawData;}
 function setRawDataOfCustomers(arg){customerData = new CustomerData(arg);}
 
 // 쓰기 예
