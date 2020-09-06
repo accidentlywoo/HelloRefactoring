@@ -10,3 +10,8 @@ function compareUsage (customerID, laterYear, month){
     const earlier = customerData[customerID].usages[laterYear-1][month];
     return {laterAmount: later, change: later - earlier};
 }
+// Step 1. 변수 캡슐화
+function getRawDataOfCustomers() {return customerData;}
+function setRawDataOfCustomers(arg){customerData = arg;}
+// 쓰기예
+getRawDataOfCustomers()[customerID].usages[year][month] = amount;
