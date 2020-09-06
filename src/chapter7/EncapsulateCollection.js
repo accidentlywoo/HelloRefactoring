@@ -14,7 +14,7 @@ class Person{
 
     get name(){return this._name;}
     get courses(){return this._courses}
-    set courses(aList){this._courses = aList;}
+    set courses(aList){this._courses = aList.slice*();}
 }
 class Course{
     constructor(name, isAdvanced){
@@ -23,4 +23,9 @@ class Course{
     }
     get name(){return this._name;}
     get isAdvanced(){return this._isAdvanced;}
+}
+
+// 클라이언트
+for(const name of readBasicCourseNames(filename)){
+    aPerson.addCourse(new Course(name, false));
 }
