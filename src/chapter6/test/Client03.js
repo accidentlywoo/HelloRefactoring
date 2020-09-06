@@ -1,4 +1,4 @@
-const {reading, enrichReading} = require("../../src/chapter6/combineFunctionsIntoClass");
+const {reading, enrichReading} = require("../combineFunctionsIntoClass");
 
 const rawReading = reading;
 const aReading = enrichReading(rawReading);

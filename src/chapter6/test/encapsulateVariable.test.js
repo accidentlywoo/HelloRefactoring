@@ -1,5 +1,5 @@
 const {assert, expect} = require('chai');
-const { defaultOwner } = require("${workspaceFolder}/src/chaper6/defaultOwner");
+const { defaultOwner } = require("../defaultOwner");
 
 const owner1 = defaultOwner();
 assert.equal("파울러", owner1.lastName, "처음 값 확인");

@@ -1,4 +1,4 @@
-const { reading } = require("../../src/chapter6/combineFunctionsIntoClass");
+const { reading } = require("../combineFunctionsIntoClass");
 
 const aReading = reading;
 // const base = (baseRate(aReading.month, aReading.year) *aReading.quantity);
