@@ -29,6 +29,6 @@ order1.priority = "normal";
 // let orders = [new Order().priority ="normal",new Order().priority = "high"];
 let orders = [order1];
 let orders2 = [new Order({priority: "normal"}),new Order({priority: "high"}), new Order({priority: "low"})];
-console.log("setter Injection : ", orders.forEach(o => o));// -> 왜 안 higherThan이 undefined일까?
-console.log("default Constructor Injection : " ,new Order());
-console.log("constructor Injection : ", orders2.filter(o => o.priority.higherThan(new Priority("low"))));
+console.log("setter Composition : ", orders.forEach(o => o));// -> 왜 안 higherThan이 undefined일까?
+console.log("default Constructor Composition : " ,new Order());
+console.log("constructor Composition : ", orders2.filter(o => o.priority.higherThan(new Priority("low"))));
