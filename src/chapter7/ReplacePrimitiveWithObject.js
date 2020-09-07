@@ -1,6 +1,6 @@
 class Order{
-    constructor(data){
-        this.priority = data.priority;
+    constructor(data = {}){
+        this._priority = new Priority(data.priority);
     }
     get priority(){return this._priority;}
     get priorityString(){return this._priority.toString();}
@@ -23,6 +23,8 @@ class Priority{
 }
 
 // 클라이언트
-let orders = [new Order(new Priority('low')),new Order(new Priority('normal'))];
-let highPriorityCount = orders.filter(o => o.priority.higherThan(new Priority("low")));
-console.log(highPriorityCount);
+
+let orders = [new Order().priority ="normal",new Order().priority = "high"];
+let orders2 = [new Order({priority: "normal"}),new Order({priority: "high"})];
+// console.log( orders.filter(o => o.priority.higherThan(new Priority("low")))); -> 왜 안 higherThan이 undefined일까?
+console.log( orders2.filter(o => o.priority.higherThan(new Priority("low"))));
