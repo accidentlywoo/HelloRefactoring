@@ -23,8 +23,12 @@ class Priority{
 }
 
 // 클라이언트
+let order1 = new Order();
+order1.priority = "normal";
 
-let orders = [new Order().priority ="normal",new Order().priority = "high"];
-let orders2 = [new Order({priority: "normal"}),new Order({priority: "high"})];
-console.log( orders.forEach(o => o.priority));// -> 왜 안 higherThan이 undefined일까?
-console.log( orders2.filter(o => o.priority.higherThan(new Priority("low"))));
+// let orders = [new Order().priority ="normal",new Order().priority = "high"];
+let orders = [order1];
+let orders2 = [new Order({priority: "normal"}),new Order({priority: "high"}), new Order({priority: "low"})];
+console.log("setter Injection : ", orders.forEach(o => o));// -> 왜 안 higherThan이 undefined일까?
+console.log("default Constructor Injection : " ,new Order());
+console.log("constructor Injection : ", orders2.filter(o => o.priority.higherThan(new Priority("low"))));
