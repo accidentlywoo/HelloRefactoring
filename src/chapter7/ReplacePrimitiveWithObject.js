@@ -23,12 +23,12 @@ class Priority{
 }
 
 // 클라이언트
-let order1 = new Order();
-order1.priority = "low";
+let orderSet = new Order();
+orderSet.priority = "high";
 
 // let orders = [new Order().priority ="normal",new Order().priority = "high"];
-let orders = [order1];
+let orders1 = [orderSet];
 let orders2 = [new Order({priority: "normal"}),new Order({priority: "high"}), new Order({priority: "low"})];
-console.log("setter Composition : ", orders.filter(o => o.priority.higherThan(new Priority("low"))));
+console.log("setter Composition : ", orders1.filter(o => o.priority.higherThan(new Priority("low"))));
 console.log("default Constructor Composition : " ,new Order());
 console.log("constructor Composition : ", orders2.filter(o => o.priority.higherThan(new Priority("low"))));
