@@ -30,5 +30,6 @@ orderSet.priority = "high";
 let orders1 = [orderSet];
 let orders2 = [new Order({priority: "normal"}),new Order({priority: "high"}), new Order({priority: "low"})];
 console.log("setter Composition : ", orders1.filter(o => o.priority.higherThan(new Priority("low"))));
+console.log("setter composition chaining : ", new Order().priority = 'normal');// setter 값을 할당시에 메소드가 호출된다.
 console.log("default Constructor Composition : " ,new Order());
 console.log("constructor Composition : ", orders2.filter(o => o.priority.higherThan(new Priority("low"))));
