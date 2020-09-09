@@ -24,7 +24,7 @@ class Priority{
 
 // 클라이언트
 let order1 = new Order();
-order1.priority = "high";
+order1.priority = "low";
 
 // let orders = [new Order().priority ="normal",new Order().priority = "high"];
 let orders = [order1];
