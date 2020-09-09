@@ -4,7 +4,8 @@ class Order{
     }
     get priority(){return this._priority;}
     get priorityString(){return this._priority.toString();}
-    set priority(aString){this._priority = new Priority(aString);}
+    set priority(aString){this._priority = new Priority(aString); return this;} // return 무시됨
+    setPriority(aString){this._priority = new Priority(aString); return this;}
 }
 
 class Priority{
@@ -29,7 +30,12 @@ orderSet.priority = "high";
 // let orders = [new Order().priority ="normal",new Order().priority = "high"];
 let orders1 = [orderSet];
 let orders2 = [new Order({priority: "normal"}),new Order({priority: "high"}), new Order({priority: "low"})];
+
+console.log("기본setter return문 실패 : ", new Order().priority = 'normal');
+console.log("zzzzz : ", new Order().setPriority('normal'));
+
 console.log("setter Composition : ", orders1.filter(o => o.priority.higherThan(new Priority("low"))));
-console.log("setter composition chaining : ", new Order().priority = 'normal');// setter 값을 할당시에 메소드가 호출된다.
+// console.log("setter composition chaining : ", (new Order().priority = 'normal').higherThan(new Priority("low")));// setter 값을 할당시에 메소드가 호출된다.
+console.log("이런짓은 하지말자.. : ", (new Order().setPriority('normal')).priority.higherThan(new Priority("low")));
 console.log("default Constructor Composition : " ,new Order());
 console.log("constructor Composition : ", orders2.filter(o => o.priority.higherThan(new Priority("low"))));
