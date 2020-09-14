@@ -35,7 +35,7 @@ console.log("기본setter return문 실패 : ", new Order().priority = 'normal')
 console.log("zzzzz : ", new Order().setPriority('normal'));
 
 console.log("setter Composition : ", orders1.filter(o => o.priority.higherThan(new Priority("low"))));
-// console.log("setter composition chaining : ", (new Order().priority = 'normal').higherThan(new Priority("low")));// setter 값을 할당시에 메소드가 호출된다.
+// console.log("setter composition chaining : ", (new Order().priority = 'normal').priority.higherThan(new Priority("low")));// setter 값을 할당시에 메소드가 호출된다.
 console.log("이런짓은 하지말자.. : ", (new Order().setPriority('normal')).priority.higherThan(new Priority("low")));
 console.log("default Constructor Composition : " ,new Order());
 console.log("constructor Composition : ", orders2.filter(o => o.priority.higherThan(new Priority("low"))));
