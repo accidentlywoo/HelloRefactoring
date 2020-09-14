@@ -9,6 +9,9 @@ class Tracking {
 }
 
 class Shipment{
+    constructor(){
+        this._trackingInformation = new Tracking();
+    }
     get trackingInfo(){
         return this._trackingInformation.display;
     }
@@ -17,3 +20,10 @@ class Shipment{
         this._trackingInformation = aTrackingInformation;
     }
 }
+
+//Client
+let request = {
+    vendor : "woo"
+}
+let aShipe = new Shipment();
+aShipe.trackingInfomation.shippingCompany = request.vendor; 
