@@ -16,6 +16,15 @@ function trackSummary(points){
         return result;
     }
 
+   
+    function calculateTime(){}
+}
+function top_calculateDistance(points){
+    let result = 0;
+    for(let i = 1; i < points.length; i++){
+        result += distance(points[i-1], points[i]);
+    }
+    return result;
     function distance(p1, p2){
         const EARTH_RADIUS = 3959;
         const dLat = radians(p2.lat) - radians(p1.lat);
@@ -28,12 +37,4 @@ function trackSummary(points){
         return EARTH_RADIUS * c;
     }
     function radians(degrees){}
-    function calculateTime(){}
-}
-function top_calculateDistance(points){
-    let result = 0;
-    for(let i = 1; i < points.length; i++){
-        result += distance(points[i-1], points[i]);
-    }
-    return result;
 }
