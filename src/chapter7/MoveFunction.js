@@ -45,17 +45,29 @@ class Account{
     }
 
     get overdraftCharge(){
-        return this.type.overdraftCharge(this.daysOverdrawn);
+        return this.type.overdraftCharge(this);
     }
+    // get overdraftCharge(daysOverdrawn){
+    //     if(this.type.isPremium){
+    //         const baseCharge = 10;
+    //         if(daysOverdrawn <= 7)
+    //             return baseCharge;
+    //         else
+    //             return baseCharge + (daysOverdrawn - 7)* 0.85;
+    //     }else
+    //         return daysOverdrawn * 1.75;
+    // }
+}
 
-    get overdraftCharge(daysOverdrawn){
-        if(this.type.isPremium){
+class AccountType{
+    overdraftCharge(account){
+        if(this.isPremium){
             const baseCharge = 10;
-            if(daysOverdrawn <= 7)
+            if(account.daysOverdrawn <= 7)
                 return baseCharge;
             else
-                return baseCharge + (daysOverdrawn - 7)* 0.85;
+                return baseCharge + (account.daysOverdrawn -7) * 0.85;
         }else
-            return daysOverdrawn * 1.75;
+            return account.daysOverdrawn * 1.75;
     }
 }
