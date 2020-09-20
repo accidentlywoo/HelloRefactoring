@@ -21,13 +21,14 @@ function photoDiv(p){
 function zznew(p){
     return [
         '<p>제목 : ${p.title} </p>',
-        emitPhotoData(p),
+        '<p>위치 : ${p.location}</p>',
+        '<p>날찌 : ${p.date.toDateString()}</p>',
     ].join("\n");
 }
 
-function emitPhotoData(aPhoto){
-    const result = [];
-    result.push('<p>위치 : ${aPhoto.location}</p>');
-    result.push('<p>날찌 : ${aPhoto.date.toDateString()}</p>');
-    return result.join("\n");
-}
+// function emitPhotoData(aPhoto){
+//     const result = [];
+//     result.push('<p>위치 : ${aPhoto.location}</p>');
+//     result.push('<p>날찌 : ${aPhoto.date.toDateString()}</p>');
+//     return result.join("\n");
+// }
