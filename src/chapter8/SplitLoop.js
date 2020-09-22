@@ -1,10 +1,19 @@
-let youngest = people[0] ? people[0].age : Infinity;
-let totalSalary = 0;
-for (const p of people){
-    totalSalary += p.salary;
-}
-for(const p of people){
-    if(p.age < youngest) youngest = p.age;
+function totalSalary(){
+    let totalSalary = 0;
+    for (const p of people){
+        totalSalary += p.salary;
+    }
+    return totalSalary;
 }
 
-return `최연소 : ${youngest}, 총 급여 : ${totalSalary}`;
+function youngestAge(){
+    let youngest = people[0] ? people[0].age : Infinity;
+
+    for(const p of people){
+        if(p.age < youngest) youngest = p.age;
+    }
+    return youngest;
+}
+
+
+return `최연소 : ${youngestAge()}, 총 급여 : ${totalSalary()}`;
