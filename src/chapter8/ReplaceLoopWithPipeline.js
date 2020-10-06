@@ -1,10 +1,11 @@
-const { first } = require("lodash");
-
 function acquireData(input){
     const lines = input.split("\n");
     let firstLine = true;
     const result = [];
-    for(const line of lines){
+    
+    // 반복문에서 사용하는 컬렉션을 가리키는 별도 변수를 새로 만든다.
+    const loopItems = lines;
+    for(const line of loopItems){
         if(firstLine){
             firstLine = false;
             continue;
