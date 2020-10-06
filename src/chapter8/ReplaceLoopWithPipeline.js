@@ -6,7 +6,9 @@ function acquireData(input){
     // 반복문에서 사용하는 컬렉션을 가리키는 별도 변수를 새로 만든다.
     const loopItems = lines
                     .slice(1)
-                    .filter(line => line.trim() != "");
+                    .filter(line => line.trim() != "")
+                    .map(line => line.split(","))
+                    ;
     for(const line of loopItems){
         // if(firstLine){
             // firstLine = false;
