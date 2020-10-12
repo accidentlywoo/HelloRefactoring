@@ -8,8 +8,8 @@ function distanceTravelled (scenario, time){
     let secondaryTime = time - scenario.delay;
     if (secendaryTime > 0){ // 두 번째 힘을 반영해 다시 계산
         let primaryVelocity = primaryAcceleration * scenario.delay;
-        let acc = (scenario.primaryForce + scenario.secondaryForce) / scenario.mass;// 변수 두번 대입 -> 역할 두개
-        result += primaryVelocity * secondaryTime + 0.5 * acc * secondaryTime * secondaryTime;
+        let secondaryAcceleration = (scenario.primaryForce + scenario.secondaryForce) / scenario.mass;// 변수 두번 대입 -> 역할 두개
+        result += primaryVelocity * secondaryTime + 0.5 * secondaryAcceleration * secondaryTime * secondaryTime;
     }
     return result;
 }
