@@ -2,8 +2,8 @@ const { expect, assert } = require('chai');
 
 class ProductionPlan{
     get production() {
-        assert(this._production == this.calculatedProduction);
-        return this._production;
+        // assert(this._production == this.calculatedProduction);
+        return this.calculatedProduction;
     }
     get calculatedProduction() {
         return this._adjustments.reduce((sum, a) => sum + a.amount, 0);
