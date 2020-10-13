@@ -22,4 +22,9 @@ class TelephoneNumber {
     set areaCode(arg){this._areaCode = arg;}
     get number(){return this._number;}
     set number(arg){this._number = arg;}
+    // 동치성을 값 기반으로 평가하기 위한 발버둥
+    equals(other) {
+        if(!(other instanceof TelephoneNumber)) return false;
+        return this.areaCode == other.areaCode && this.number == other.number;
+    }
 }
