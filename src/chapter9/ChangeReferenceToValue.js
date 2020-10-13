@@ -1,3 +1,5 @@
+const { expect, assert } = require('chai');
+
 class Person {
     constructor(){
         this._telephoneNumber = new TelephoneNumber();
@@ -27,4 +29,10 @@ class TelephoneNumber {
         if(!(other instanceof TelephoneNumber)) return false;
         return this.areaCode == other.areaCode && this.number == other.number;
     }
+
 }
+
+it('telephone equals', () => {
+    assert( new TelephoneNumber("312", "555-0142")
+    .equals(new TelephoneNumber("312", "555-0142")));
+});
