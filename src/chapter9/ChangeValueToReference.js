@@ -1,8 +1,9 @@
 class Order {
     constructor(data) {
         this._number = data.number;
-        this._customer = new CustomElementRegistry(data.customer);
+        this._customer =registerCustomer(data.customer);
     }
+    get customer() {return this._customer;}
 }
 
 class Customer{
