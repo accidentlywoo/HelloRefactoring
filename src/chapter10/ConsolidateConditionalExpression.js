@@ -1,6 +1,9 @@
-function disabilityAmout(anEmployee){
-    if((anEmployee.seniority < 2) ||
-       (anEmployee.monthsDisabled > 12) ||
-       (anEmployee.isPartTime) ) return 0;
-    // 장애 수당 계산
+function disbilityAmount(anEmployee) {
+    if(isNotEligibleForDisability()) return 0;
+
+    function isNotEligibleForDisability(){
+        return ((anEmployee.seniority < 2) ||
+        (anEmployee.monthsDisabled > 12) ||
+        (anEmployee.isPartTime));
+    }
 }
