@@ -8,7 +8,7 @@ function disbilityAmount(anEmployee) {
     }
 }
 
-if(anEmployee.onVacation)
-    if(anEmployee.seniority > 10)
+if((anEmployee.onVacation) &&
+    (anEmployee.seniority > 10))
         return 1;
-    return 0.5;
+return 0.5; // 완전 바깥쪽임.
