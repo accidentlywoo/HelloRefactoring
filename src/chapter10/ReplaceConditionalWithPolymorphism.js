@@ -28,7 +28,11 @@ function createBird(bird){
             return new Bird(bind);
     }
 }
-class EuropeanSwallow extends Bird{}
+class EuropeanSwallow extends Bird{
+    get plumage(){
+        return "보통이다";
+    }
+}
 class AfricanSwallow extends Bird{}
 class NorwegianBlueParrot extends Bird{}
 
