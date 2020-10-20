@@ -1,7 +1,7 @@
 // 직원 급겨 계산
 function payAmout(employee) {
     let result;
-    if(employee.isSeparated) result = {amount : 0, reasonCode: 'SEP'};
+    if(employee.isSeparated) return {amount : 0, reasonCode: 'SEP'};
     if(employee.isRetired){ // 은퇴한 직원인가
         result = {amount : 0, reasonCode: 'RET'};
     }
