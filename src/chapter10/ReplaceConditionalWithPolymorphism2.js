@@ -75,13 +75,16 @@ class ExperienceChinaRating extends Rating {
     }
     get voyageLengthFactor(){
         let result = 0;
-        result += 3;
-        if (voyage.length > 12) result += 1;
-        if (voyage.length > 18) result -= 1;
+        if (this.voyage.length > 12) result += 1;
+        if (this.voyage.length > 18) result -= 1;
         return result;
     }
     get historyLengthFactor(){
         return (this.history.length > 10) ? 1 : 0 ;
+    }
+
+    get voyageProfitFactor(){
+        return super.voyageProfitFactor + 3;
     }
 }
 
