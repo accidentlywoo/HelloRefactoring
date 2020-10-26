@@ -1,6 +1,6 @@
 // 변형 동작으 다형성으로 표현하기
 function rating(voyage, history){ // 투자 등급
-    return new Rating(voyage, history).value;
+    return createRating(voyage, history).value;
 }
 
 class Rating { // 함수들을 Rating클래스로 묶기.
@@ -53,6 +53,12 @@ class Rating { // 함수들을 Rating클래스로 묶기.
     get hasChinaHistory(){
         return this.history.some(v => "중국" === v.zone);
     }
+}
+
+function createRating(voyage, history) {
+    if(voyage.zone === "중국" && history.some( v => "중국" === v.zone ))
+        return new ExperienceChinaRating(voyage, history);
+    else return new Rating(voyage, history);
 }
 
 class ExperienceChinaRating extends Rating {
