@@ -55,6 +55,10 @@ class Rating { // 함수들을 Rating클래스로 묶기.
     }
 }
 
+class ExperienceChinaRating extends Rating {
+
+}
+
 function hasChina(history){ // 중국을 경유하는가?
     return history.some(v => "중국" === v.zone);
 }
