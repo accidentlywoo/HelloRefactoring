@@ -37,6 +37,12 @@ class Rating { // 함수들을 Rating클래스로 묶기.
         let result = 2;
         if (voyage.zone === "중국") result += 1;
         if (voyage.zone === "동인도") result += 1;
+        result += this.voyageAndHistoryLengthFactor;
+        return result;
+    }
+
+    get voyageAndHistoryLengthFactor(){
+        let result = 0;
         if (voyage.zone === "중국" && hasChina(history)) {
             result += 3;
             if (history.length > 10) result += 1;
