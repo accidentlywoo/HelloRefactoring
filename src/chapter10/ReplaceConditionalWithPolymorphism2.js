@@ -46,19 +46,8 @@ class Rating { // 함수들을 Rating클래스로 묶기.
         return (this.voyage.length > 14) ? -1 : 0;
     }
 
-    get voyageAndHistoryLengthFactor(){
-        let result = 0;
-        //result += this.historyLengthFactor;
-        if(voyage.length > 14) result -= 1;
-        return result;
-    }
-    
     get historyLengthFactor(){
         return (this.history.length > 8) ? 1 : 0;
-    }
-
-    get hasChinaHistory(){
-        return this.history.some(v => "중국" === v.zone);
     }
 }
 
