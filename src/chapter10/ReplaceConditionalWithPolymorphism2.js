@@ -37,14 +37,14 @@ class Rating { // 함수들을 Rating클래스로 묶기.
         let result = 2;
         if (voyage.zone === "중국") result += 1;
         if (voyage.zone === "동인도") result += 1;
+        result += this.historyLengthFactor;
         result += this.voyageAndHistoryLengthFactor;
         return result;
     }
 
     get voyageAndHistoryLengthFactor(){
         let result = 0;
-        result += this.historyLengthFactor;
-        
+        //result += this.historyLengthFactor;
         if(voyage.length > 14) result -= 1;
         return result;
     }
@@ -72,7 +72,7 @@ class ExperienceChinaRating extends Rating {
     get voyageAndHistoryLengthFactor(){
         let result = 0;
         result += 3;
-        result += this.historyLengthFactor;
+        //result += this.historyLengthFactor;
         if (voyage.length > 12) result += 1;
         if (voyage.length > 18) result -= 1;
         return result;
