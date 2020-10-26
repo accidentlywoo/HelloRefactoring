@@ -29,7 +29,7 @@ class Rating { // 함수들을 Rating클래스로 묶기.
         let result = 1;
         if (history.length < 5 ) result += 4;
         result += history.filter(v => v.profit < 0).length;
-        if(voyage.zone === "중국" && hasChina(history)) result -= 2;
+        //if(voyage.zone === "중국" && hasChina(history)) result -= 2;
         return Math.max(result, 0);
     }
     
@@ -62,7 +62,10 @@ function createRating(voyage, history) {
 }
 
 class ExperienceChinaRating extends Rating {
-
+    get captainHistoryRisk(){
+        const result = super.captainHistoryRisk - 2;
+        return Math.max(result, 0);
+    }
 }
 
 function hasChina(history){ // 중국을 경유하는가?
