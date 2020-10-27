@@ -15,14 +15,13 @@ class Customer{
 
 class UnknownCustomer {
     get isUnknown() {return true;}
+    get name() {return "거주자";}
 }
 
 // 클라이언트 1..
 const aCustomer = site.customer;
 // ... 수많은 코드 ...
-let customerName;
-if (isUnknown(aCustomer)) customerName = "거주자";
-else customerName = aCustomer.name;
+let customerName = aCustomer.name;
 
 // 클라이언트 2..
 const plan = (isUnknown(aCustomer)) ? registry.billingPlan.basic : aCustomer.billingPlan;
