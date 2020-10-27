@@ -1,6 +1,8 @@
 // 전력이 필요한 현장에 인프라를 설치해 서비스를 제공
 class Site{
-    get customer(){return this._customer;}
+    get customer(){
+        return (this._customer === "미확인 고객") ? new UnknownCustomer() : this._customer;
+        }
 }
 
 class Customer{
@@ -32,7 +34,7 @@ if (aCustomer !== "미확인 고객") aCustomer.billingPlan = newPlan;
 const weeksDelinquent = isUnknown(aCustomer) ? 0 : aCustomer.paymentHistory.weeksDelinquentInLastYear;
 
 function isUnknown(arg) {
-    if(!((arg instanceof Customer) || (arg === "미확인 고객")))
+    if(!((arg instanceof Customer) || (arg instanceof UnknownCustomer)))
         throw new Error(`잘못된 값과 비교: <${arg}>`)
-    return (arg === "미확인 고객");
+    return arg.isUnknown;
 }
