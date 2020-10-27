@@ -4,10 +4,15 @@ class Site{
 }
 
 class Customer{
+    get isUnknown() {return false;}
     get name() {...} //고객 이름
     get billingPlan() {...} // 요금제
     set billingPlan(arg){...}
     get paymentHistory() {...} // 납부 이력
+}
+
+class UnknownCustomer {
+    get isUnknown() {return true;}
 }
 
 // 클라이언트 1..
