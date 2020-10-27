@@ -18,6 +18,11 @@ class UnknownCustomer {
     get name() {return "거주자";}
     get billingPlan() {return registry.billingPlans.basic} // 요금제
     set billingPlan(arg){/* 무시한다. */}
+    get paymentHistory(){return new NullPaymentHistory();}
+}
+
+class NullPaymentHistory {
+    get weeksDelinquentInLastYear() {return 0;}
 }
 
 // 클라이언트 1..
@@ -32,7 +37,7 @@ const plan = (isUnknown(aCustomer)) ? registry.billingPlan.basic : aCustomer.bil
 if (!isUnknown(aCustomer)) aCustomer.billingPlan = newPlan;
 
 // 클라이언트 4..
-const weeksDelinquent = isUnknown(aCustomer) ? 0 : aCustomer.paymentHistory.weeksDelinquentInLastYear;
+const weeksDelinquent = aCustomer.paymentHistory.weeksDelinquentInLastYear;
 
 function isUnknown(arg) {
     if(!((arg instanceof Customer) || (arg instanceof UnknownCustomer)))
