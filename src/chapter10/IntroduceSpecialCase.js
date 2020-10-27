@@ -39,6 +39,8 @@ if (!isUnknown(aCustomer)) aCustomer.billingPlan = newPlan;
 // 클라이언트 4..
 const weeksDelinquent = aCustomer.paymentHistory.weeksDelinquentInLastYear;
 
+const name !isUnknown(aCustomer) ? aCustomer.name : " 미확인 거주자";
+
 function isUnknown(arg) {
     if(!((arg instanceof Customer) || (arg instanceof UnknownCustomer)))
         throw new Error(`잘못된 값과 비교: <${arg}>`)
