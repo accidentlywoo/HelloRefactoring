@@ -16,6 +16,8 @@ class Customer{
 class UnknownCustomer {
     get isUnknown() {return true;}
     get name() {return "거주자";}
+    get billingPlan() {return registry.billingPlans.basic} // 요금제
+    set billingPlan(arg){/* 무시한다. */}
 }
 
 // 클라이언트 1..
