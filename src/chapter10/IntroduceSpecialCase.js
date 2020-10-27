@@ -19,17 +19,17 @@ class UnknownCustomer {
 const aCustomer = site.customer;
 // ... 수많은 코드 ...
 let customerName;
-if (aCustomer === "미확인 고객") customerName = "거주자";
+if (isUnknown(aCustomer)) customerName = "거주자";
 else customerName = aCustomer.name;
 
 // 클라이언트 2..
-const plan = (aCustomer === "미확인 고객") ? registry.billingPlan.basic : aCustomer.billingPlan;
+const plan = (isUnknown(aCustomer)) ? registry.billingPlan.basic : aCustomer.billingPlan;
 
 // 클라이언트 3..
 if (aCustomer !== "미확인 고객") aCustomer.billingPlan = newPlan;
 
 // 클라이언트 4..
-const weeksDelinquent = (aCustomer === "미확인 고객") ? 0 : aCustomer.paymentHistory.weeksDelinquentInLastYear;
+const weeksDelinquent = isUnknown(aCustomer) ? 0 : aCustomer.paymentHistory.weeksDelinquentInLastYear;
 
 function isUnknown(arg) {
     if(!((arg instanceof Customer) || (arg === "미확인 고객")))
