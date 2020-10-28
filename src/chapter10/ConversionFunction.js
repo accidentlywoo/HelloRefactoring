@@ -26,6 +26,7 @@ function enrichSite(aSite){
     const result = _.cloneDeep(aSite);
     const unKnownCustomer = {
         isUnknown: true,
+        name: "거주자",
     }
     if(isUnknown(result.customer)) result.customer = unKnownCustomer;
     else result.customer.isUnknown = false;
