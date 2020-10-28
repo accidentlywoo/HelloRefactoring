@@ -27,6 +27,10 @@ function enrichSite(aSite){
     const unKnownCustomer = {
         isUnknown: true,
         name: "거주자",
+        billingPlan: registry.billingPlan.basic,
+        paymentHistory: {
+            weeksDelinquentInLastYear: 0,
+        }
     }
     if(isUnknown(result.customer)) result.customer = unKnownCustomer;
     else result.customer.isUnknown = false;
@@ -43,16 +47,11 @@ const rawSite = acquireSiteData();
 const site = enrichSite(rawSite);
 const aCustomer = site.customer;
 // ... 수 많은 코드 ...
-let customer;
-if (isUnknown(aCustomer)) customerName = "거주자" ;
-else customerName = aCustomer.name;
-
-
+const customer = aCustomer.name;
 
 // 클라이언트 2
 const plan = isUnknown(aCustomer) ? 
     registry.billingPlan.basic : aCustomer.billingPlan;
 
 // 클라이언트 3
-const weeksDelinquent = isUnknown(aCustomer) ? 
-    0 : aCustomer.paymentHistory.weeksDelinquentInLastYear;
+const weeksDelinquent = aCustomer.paymentHistory.weeksDelinquentInLastYear;
