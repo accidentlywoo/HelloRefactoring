@@ -22,8 +22,14 @@ JSON jsonBoj2 =
     customer: "미확인 고객",
 };
 
-function enrichSite(inputSite){
-    return _.cloneDeep(inputSite);
+function enrichSite(aSite){
+    const result = _.cloneDeep(aSite);
+    const unKnownCustomer = {
+        isUnknown: true,
+    }
+    if(isUnknown(result.customer)) result.customer = unKnownCustomer;
+    else result.customer.isUnknown = false;
+    return result;
 }
 
 function isUnknown(aCustomer) {
