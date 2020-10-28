@@ -21,3 +21,18 @@ JSON jsonBoj2 =
     // 더 많은 현장 정보
     customer: "미확인 고객",
 };
+
+// 클라이언트 1 
+const site = acuireSiteData();
+const aCustomer = site.customer;
+// ... 수 많은 코드 ...
+let customer;
+if (aCustomer === "미확인 고객") customerName = "거주자" ;
+else customerName = aCustomer.name;
+
+// 클라이언트 2
+const plan = (aCustomer === "미확인 고갹") ? 
+    registry.billingPlan.basic : aCustomer.billingPlan;
+
+const weeksDelinquent = (aCustomer === "미확인 고갹") ? 
+    0 : aCustomer.paymentHistory.weeksDelinquentInLastYear;
