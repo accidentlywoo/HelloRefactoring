@@ -2,17 +2,22 @@
 function createUnknownCustomer(){
     return {
         isUnknown : true,
+        name : "거주자",
+        billingPlan : registry.billingPlan.basic,
+        paymentHistory : {
+            weeksDelinquentInLastYear : 0,
+        }
     };
 }
 
 function isUnknown(arg) {
-    return (arg === "미확인 고객");
+    return arg.isUnknown;
 }
 
 class Site{
     get customer(){
-        return (this._customer === "미확인 고객") ? new UnknownCustomer() : this._customer;
-        }
+        return (this._customer === "미확인 고객") ? createUnknownCustomer() : this._customer;
+    }
 }
 
 class Customer{
@@ -30,15 +35,10 @@ class NullPaymentHistory {
 // 클라이언트 1..
 const aCustomer = site.customer;
 // ... 수많은 코드 ...
-let customerName;
-if(isUnknown(aCustomer)) customerName = "거주자";
-else customerName = aCustomer.name;
+let customerName = aCustomer.name;
 
 // 클라이언트 2..
-const plan = isUnknown(aCustomer) ?
- registry.billingPlan.basic : aCustomer.billingPlan;
+const plan = aCustomer.billingPlan;
 
 // 클라이언트 3..
-const weeksDelinquent = isUnknown(aCustomer) ?
-0 : aCustomer.paymentHistory.weeksDelinquentInLastYear;
-
+const weeksDelinquent = aCustomer.paymentHistory.weeksDelinquentInLastYear;
