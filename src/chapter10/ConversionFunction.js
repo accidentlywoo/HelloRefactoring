@@ -23,12 +23,17 @@ JSON jsonBoj2 =
 };
 
 // 클라이언트 1 
-const site = acuireSiteData();
+const rawSite = acquireSiteData();
+const site = enrichSite(rawSite);
 const aCustomer = site.customer;
 // ... 수 많은 코드 ...
 let customer;
 if (aCustomer === "미확인 고객") customerName = "거주자" ;
 else customerName = aCustomer.name;
+
+function enrichSite(inputSite){
+    return _.cloneDeep(inputSite);
+}
 
 // 클라이언트 2
 const plan = (aCustomer === "미확인 고갹") ? 
