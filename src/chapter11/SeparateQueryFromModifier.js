@@ -1,4 +1,5 @@
 function alertForMiscreant(people){
+    if(findMiscreant(people) !== "") setOffAlarms();
     for (const p of people){
         if(p === "조커"){
             setOffAlarms();
