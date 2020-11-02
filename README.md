@@ -44,3 +44,13 @@
    - 참조를 값으로 바꾸기
    - 값을 참조로 바꾸기
    - 매직 리터럴 바꾸기
+
+## 스터디 원들의 깃헙 링크 쑤
+- [이정근님](https://github.com/redrebel/refactoring2)4
+- [이영범님](https://github.com/youngbeomrhee/refactoring_2nd)
+
+## 참고 리스트
+- [BDD 와 TDD 차이](https://blog.aliencube.org/ko/2014/04/02/differences-between-bdd-and-tdd/)
+- [BDD 와 TDD](https://blog.aliencube.org/ko/2014/04/02/differences-between-bdd-and-tdd/)
+- [chai BDD](https://www.chaijs.com/api/bdd/)
+- [chai Assert](https://www.chaijs.com/api/assert/)
