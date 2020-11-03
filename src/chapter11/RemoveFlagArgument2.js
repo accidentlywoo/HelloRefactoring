@@ -19,3 +19,6 @@ function deliveryDate(anOrder, isRush) {
     if (isRush) result = result.minusDays(1);
     return result;
 }
+
+function rushDeliveryDate(anOrder){return deliveryDate(anOrder, true);}
+function regularDeliveryDate(anOrder){return deliveryDate(anOrder, false);}
