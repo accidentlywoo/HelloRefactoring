@@ -11,3 +11,7 @@ bookConcert(aCustomer, true);
 bookConcert(aCustomer, CustomerType.PREMIUM);
 
 bookConcert(aCustomer, "premium");
+
+aShipment.deliveryDate = deliveryDate(anOrder, true);
+
+aShipment.deliveryDate = deliveryDate(anOrder, true);
