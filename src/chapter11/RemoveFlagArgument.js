@@ -5,3 +5,9 @@ function bookConcert(aCustomer, isPremium){
         // 일반 예약용 로직
     }
 }
+
+bookConcert(aCustomer, true);
+
+bookConcert(aCustomer, CustomerType.PREMIUM);
+
+bookConcert(aCustomer, "premium");
