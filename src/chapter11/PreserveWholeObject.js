@@ -1,11 +1,8 @@
 // 실내온도 모니터링 시스템
 class HeatingPlan{
-    xxNEWwithinRange(aNumberRange){
+    withinRange(aNumberRange){
         return (aNumberRange.low >= this._temperatureRange.low) &&
                (aNumberRange.high <= this._temperatureRange.high);
-    }
-    withinRange(bottom, top){
-        return (bottom >= this._temperatureRange.low) && top <= (this._temperatureRange.high);
     }
 }
 
