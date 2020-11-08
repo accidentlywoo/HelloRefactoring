@@ -13,6 +13,10 @@ class Employee{
     }
 }
 
+function createEmployee(name, typeCode){
+    return new Employee(name, typeCode);
+}
+
 // 호출자
 candidate = new Employee(document.name, document.emType);
 
