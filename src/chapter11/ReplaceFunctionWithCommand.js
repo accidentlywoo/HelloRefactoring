@@ -1,8 +1,10 @@
 class Scorer{
-    constructor(candidate){
+    constructor(candidate, medicalExam, scoringGuide){
         this._candidate = candidate;
+        this._medicalExam = medicalExam;
+        this._scoringGuide = scoringGuide;
     }
-    execute(medicalExam, scoringGuide){
+    execute(){
         let result = 0;
         let healthLevel = 0;
         let highMedicalRiskFlag = false;
@@ -23,5 +25,5 @@ class Scorer{
 }
 
 function score(candidate, medicalExam, scoringGuide){
-    return new Scorer(candidate).execute(medicalExam, scoringGuide);
+    return new Scorer(candidate,medicalExam, scoringGuide).execute();
 }
