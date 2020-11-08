@@ -9,10 +9,7 @@ class Scorer{
         this._healthLevel = 0;
         this._highMedicalRiskFlag = false;
 
-        if(this._medicalExam.isSmoker){
-            this._healthLevel += 10;
-            this._highMedicalRiskFlag = true;
-        }
+        this.scoreSmoking();
         this._certificationGrade = "regular";
         if(this._scoringGuide.stateWithLowCertification(this._candidate.originState)){
             this._certificationGrade = "low";
@@ -21,6 +18,12 @@ class Scorer{
         // 비슷한 코드가 한참 이어짐
         this._result -= Math.max(this._healthLevel - 5, 0);
         return this._result;
+    }
+    scoreSmoking(){
+        if(this._medicalExam.isSmoker){
+            this._healthLevel += 10;
+            this._highMedicalRiskFlag = true;
+        }
     }
 }
 
