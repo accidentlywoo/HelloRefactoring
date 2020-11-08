@@ -1,3 +1,5 @@
+const { create } = require("lodash");
+
 class Employee{
     constructor(name, typeCode){
         this._name = name;
@@ -18,7 +20,7 @@ function createEmployee(name, typeCode){
 }
 
 // 호출자
-candidate = new Employee(document.name, document.emType);
+candidate = createEmployee(document.name, document.emType);
 
 // 호출자 2
-const leadEngineer = new Employee(document.leadEngineer, 'E');
+const leadEngineer = createEmployee(document.leadEngineer, 'E');
