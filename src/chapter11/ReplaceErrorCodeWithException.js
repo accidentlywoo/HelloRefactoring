@@ -10,9 +10,10 @@ function calculateShippingCosts(anOrder){
     if (shippingRules < 0) return shippingRules; // 오류 전파
     // 더 관련 없는 코드
 }
-try{
-    const status = calculateShippingCosts(orderData);
-}catch(e) {
-    // 예외 처리 로직
-}
+
+let status;
+status = calculateShippingCosts(orderData);
 if (status < 0) errorList.push({order: orderData, errorCode: status});
+
+
+
