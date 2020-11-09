@@ -1,14 +1,6 @@
-class ChargeCalculator{
-    constructor(){
-    }
-    charge(customer, usage, provider){
-        const baseCharge = customer.baseCharge * usage;
-        return baseCharge + provider.connectionCharge;
-    }
-}
-
 function charge(customer, usage, provider){
-    return new ChargeCalculator(customer, usage, provider).charge(customer, usage, provider);
+    const baseCharge = customer.baseCharge * usage;
+    return baseCharge + provider.connectionCharge;
 }
 
 // 호출
