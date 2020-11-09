@@ -1,13 +1,13 @@
 function localShippingRules(country){
     const data = countryData.shippingRules[country];
     if (data) return new shippingRules(data);
-    else return -23;
+    else throw new OrderProcessingError(-23);
 }
 
 function calculateShippingCosts(anOrder){
     // 관련 없는 코드
     const shippingRules = localShippingRules(anOrder.country);
-    if (shippingRules < 0) return shippingRules; // 오류 전파
+    if (shippingRules < 0) throw new Error("오류 코드가 다 사라지지 않았습니다.");
     // 더 관련 없는 코드
 }
 
