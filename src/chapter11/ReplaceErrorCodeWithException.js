@@ -11,16 +11,16 @@ function calculateShippingCosts(anOrder){
     // 더 관련 없는 코드
 }
 
-let status;
+// let status;
 try{
-    status = calculateShippingCosts(orderData);
+    calculateShippingCosts(orderData);
 }catch(e){
     if(e instanceof OrderProcessingError)
         errorList.push({order: orderData, errorCode: status});
     else
         throw e;
 }
-if (status < 0) errorList.push({order: orderData, errorCode: status});
+// if (status < 0) errorList.push({order: orderData, errorCode: status});
 
 class OrderProcessingError extends Error {
     constructor(errorCode){
