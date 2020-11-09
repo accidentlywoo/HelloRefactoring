@@ -11,3 +11,6 @@ class ChargeCalculator{
         return this.baseCharge + this._provider.connectionCharge;
     }
 }
+
+// 호출
+monthCharge = new ChargeCalculator(customer, usage, provider).charge;
