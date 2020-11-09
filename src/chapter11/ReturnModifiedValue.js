@@ -9,9 +9,9 @@ function calculateAscent(){ // 고도 상승분
 }
 
 // let totalAscent = 0;
-let totalTime = 0;
-let totalDistance = 0;
-totalAscent = calculateAscent();
-calculateTime();
-calculateDistance();
+// let totalTime = 0;
+// let totalDistance = 0;
+const totalAscent = calculateAscent();
+const totalTime = calculateTime();
+const totalDistance = calculateDistance();
 const pace = totalTime / 60 / totalDistance;
