@@ -5,7 +5,7 @@
 4. 테스트 구축하기 : Mocha, Chai 와의 전쟁... :book: 
 5. 리팩터링 카탈로그 보는 법
 
-6. 기본적인 리팩터링 
+6. [기본적인 리팩터링](https://github.com/accidentlywoo/HelloRefactoring/tree/master/src/chapter6)
    - 함수 추출하기
    - 함수 인라인하기
    - 변수 추출하기
@@ -17,7 +17,7 @@
    - 여러 함수를 클래스로 묶기
    - 여러 함수를 변환 함수로 묶기
    - 단계 쪼개기 :book:
-7. 캡슐화
+7. [캡슐화](https://github.com/accidentlywoo/HelloRefactoring/tree/master/src/chapter7)
    - 레코드 캡슐화하기
    - 컬렉션 캡슐화하기
    - 기본형을 객체로 바꾸기
@@ -27,7 +27,7 @@
    - 위임 숨기기
    - 중개자 제거하기
    - 알고리즘 교체하기
-8. 기능이동
+8. [기능이동](https://github.com/accidentlywoo/HelloRefactoring/tree/master/src/chapter8)
    - 함수 옮기기
    - 필드 옮기기
    - 문장을 함수로 옮기기
@@ -37,14 +37,14 @@
    - 반복문 쪼개기
    - 반복문을 파이프라인으로 바꾸기
    - 죽은 코드 제거하기
-9. 데이터 조직화
+9. [데이터 조직화](https://github.com/accidentlywoo/HelloRefactoring/tree/master/src/chapter9)
    - 변수 쪼개기
    - 필드 이름 바꾸기
    - 파생 변수를 질의 함수로 바꾸기
    - 참조를 값으로 바꾸기
    - 값을 참조로 바꾸기
    - 매직 리터럴 바꾸기
-10. 조건부 로직 간소화
+10. [조건부 로직 간소화](https://github.com/accidentlywoo/HelloRefactoring/tree/master/src/chapter10)
    - 조건문 분해하기
    - 조건식 통합하기
    - 중첩 조건문을 보호 구문으로 바꾸기
@@ -52,7 +52,7 @@
    - 특이 케이스 추가하기
    - 어서션 추가하기
    - 제어 플래그를 탈출문으로 바꾸기
-11. API 리팩터링
+11. [API 리팩터링](https://github.com/accidentlywoo/HelloRefactoring/tree/master/src/chapter11)
    - 질의 함수와 변경 함수 분리하기
    - 함수 매개변수화하기
    - 플래그 인수 제거하기
