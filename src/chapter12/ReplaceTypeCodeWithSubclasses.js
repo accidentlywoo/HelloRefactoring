@@ -12,6 +12,10 @@ class Employee {
     toString() {return `${this._name}(${this._type})`;}
 }
 
+function createEmployee(name, type){
+    return new Employee(name, type);
+}
+
 class Enginner extends Employee{
     get type() {return "engieer";}
 }
