@@ -14,11 +14,21 @@ class Employee {
 
 function createEmployee(name, type){
     switch(type){
-        case "engineer" : return new Employee(name, type);
+        case "engineer" : return new Enginner(name, type);
+        case "salesperson" : return new Salesperson(name, type);
+        case "manager" : return new Manager(name, type);
     }
     return new Employee(name, type);
 }
 
 class Enginner extends Employee{
     get type() {return "engieer";}
+}
+
+class Salesperson extends Employee{
+    get type() {return "salesperson";}
+}
+
+class Manager extends Employee{
+    get type() {return "manager";}
 }
