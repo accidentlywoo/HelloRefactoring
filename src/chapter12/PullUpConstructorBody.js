@@ -1,22 +1,16 @@
-class Party{
-    constructor(name){
-        this._name = name;
-    }
+class Employee{
+    constructor(name){...}
+    get isPrivileged(){...}
+    assignCar(){...}
 }
 
-class Employee extends Party{
-    constructor(name, id, monthlyCost){
+class Manager extends Employee{
+    constructor(name, grade){
         super(name);
-        this._id = id;
-        this._monthlyCost = monthlyCost;
+        this._grade = grade;
+        if (this.isPrivileged) this.assignCar(); // 모든 서브클래스가 수행한다.
     }
-    // 생략
-}
-
-class Department extends Party{
-    constructor(name, staff){
-        super(name);
-        this._staff = staff;
+    get isPrivileged(){
+        return this._grade > 4;
     }
-    // 생략
 }
