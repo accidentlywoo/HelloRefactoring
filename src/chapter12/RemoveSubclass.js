@@ -3,7 +3,7 @@ const { isMap } = require("lodash");
 class Person {
     constructor(name, genderCode){
         this._name = name;
-        this._genderCode = genderCode || 'X';
+        this._genderCode = genderCode;
     }
     get name()      {return this._name;}
     get genderCode(){return this._genderCode;}
