@@ -26,3 +26,17 @@ function createMale(name){
 function createFemale(name){
     return new Female(name);
 }
+
+function loadFromInput(data){
+    const result = [];
+    data.forEach(aRecord => {
+        let p;
+        switch (aRecord.gender){
+            case 'M' : p = new Male(aRecord.name); break;
+            case 'F' : p = new Female(aRecord.name); break;
+            default : p = new Person(aRecord.name);
+        }
+        result.push(p);
+    });
+    return result;
+}
