@@ -13,6 +13,9 @@ class Booking {
         if(this.isPeakDay) result += Math.round(result * 0.15);
         return result;
     }
+    _bePremium(extras){
+        this._premiumDelegate = new PremiumBookingDelegate(this, extras);
+    }
 }
 
 class PremiumBooking extends Booking{
