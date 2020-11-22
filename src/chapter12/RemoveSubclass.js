@@ -14,3 +14,15 @@ class Male extends Person {
 class Female extends Person{
     get genderCode(){return "F";}
 }
+
+function createPerson(name){
+    return new Person(name);
+}
+
+function createMale(name){
+    return new Male(name);
+}
+
+function createFemale(name){
+    return new Female(name);
+}
