@@ -1,11 +1,12 @@
 const { isMap } = require("lodash");
 
 class Person {
-    constructor(name){
+    constructor(name, genderCode){
         this._name = name;
+        this._genderCode = genderCode || 'X';
     }
     get name()      {return this._name;}
-    get genderCode(){return "X";}
+    get genderCode(){return this._genderCode;}
     get isMale(){return this instanceof Male;}
     // 생략
 }
