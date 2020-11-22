@@ -33,7 +33,8 @@ class Department extends Party{
     get headCount(){
         return this.staff.length;
     }
-    get totalAnnualCost(){ // 총 연간 비용
-        return this.totalMonthlyCost * 12;
+    get annualCost(){ // 총 연간 비용
+        return this.monthlyCost * 12;
     }
+    get monthlyCost() {}
 }
