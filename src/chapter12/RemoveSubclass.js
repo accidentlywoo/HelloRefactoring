@@ -1,3 +1,5 @@
+const { isMap } = require("lodash");
+
 class Person {
     constructor(name){
         this._name = name;
@@ -26,3 +28,6 @@ function loadFromInput(data){
     const result = [];
     data.map(aRecord => createPerson(aRecord));
 }
+
+// client
+const numberOfMales = people.filter(p => isMale(p)).length;
