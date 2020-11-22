@@ -16,8 +16,8 @@ class Booking {
 }
 
 class PremiumBooking extends Booking{
-    constructor(hostBooking, extras) {
-        this._host = hostBooking;
+    constructor(show, date, extras) {
+        super(show, date);
         this._extras = extras;
     }
 
@@ -31,6 +31,13 @@ class PremiumBooking extends Booking{
 
     get hasDinner(){
         return this._extras.hasOwnProperty('dinner') && !this.isPeakDay;
+    }
+}
+
+class PremiumBookingDelegate{
+    constructor(hostBooking, extras){
+        this._host = hostBooking;
+        this._extras = extras;
     }
 }
 
