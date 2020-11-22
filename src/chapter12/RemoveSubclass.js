@@ -16,27 +16,13 @@ class Female extends Person{
 }
 
 function createPerson(name){
-    let p;
     switch (aRecord.gender){
-        case 'M' : p = new Male(aRecord.name); break;
-        case 'F' : p = new Female(aRecord.name); break;
-        default : p = new Person(aRecord.name);
+        case 'M' : return new Male(aRecord.name); break;
+        case 'F' : return Female(aRecord.name); break;
+        default : return Person(aRecord.name);
     }
-    return p;
 }
 function loadFromInput(data){
     const result = [];
-    data.forEach(aRecord => {
-        result.push(p);
-    });
-    return result;
+    data.map(aRecord => createPerson(aRecord));
 }
-
-function createMale(name){
-    return new Male(name);
-}
-
-function createFemale(name){
-    return new Female(name);
-}
-
