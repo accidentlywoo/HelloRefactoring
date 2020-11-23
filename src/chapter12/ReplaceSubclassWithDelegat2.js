@@ -14,7 +14,15 @@ function createBird(data){
 class Bird{
     constructor(data){
         this._name = data.name;
-        thid._plumage = data.plumage;
+        this._plumage = data.plumage;
+        this._speciesDelegate = this.selectSpeciesDelegate(data);
+    }
+    selectSpeciesDelegate(data){
+        switch(data.type){
+            case '유럽 제비' : 
+                return new EuropeanSwallowDelegate(data);
+            default : return null;
+        }
     }
     get name() {return this._name;}
     get plumage(){
@@ -53,5 +61,5 @@ class NorwegianBludParrot extends Bird{
 }
 
 class EuropeanSwallowDelegate {
-    
+
 }
