@@ -17,15 +17,15 @@ class Bird{
         switch (data.type){
             case '노르웨이 파랑 앵무' : 
                 return new NorwegianBludParrotDelegate(data, this);
-            default : return null;
+            default : return new SpeciesDelegate(data, this);
         }
     }
     get name() {return this._name;}
     get plumage(){
-        return this._plumage || '보통이다';
+        return this._speciesDelegate.plumage;
     }
     get airSpeedVelocity(){
-        return this._speciesDelegate ? this._speciesDelegate.airSpeedVelocity : null;
+        return this._speciesDelegate.airSpeedVelocity;
     }
 }
 
@@ -72,4 +72,5 @@ class SpeciesDelegate {
     get plumage(){
         return this._bird._plumage || "보통이다";
     }
+    get airSpeedVelocity(){return null;}
 }
