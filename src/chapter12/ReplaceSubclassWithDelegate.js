@@ -22,6 +22,11 @@ class Booking {
         if (this.isPeakDay) result += Math.round(result * 0.15);
         return result;
     }
+    get hasDinner(){
+        return (this._premiumDelegate)
+        ? this._premiumDelegate.hasDinner
+        : undefined;
+    }
     _bePremium(extras){
         this._premiumDelegate = new PremiumBookingDelegate(this, extras);
     }
@@ -32,8 +37,6 @@ class PremiumBooking extends Booking{
         super(show, date);
         this._extras = extras;
     }
-
-    
 }
 
 class PremiumBookingDelegate{
