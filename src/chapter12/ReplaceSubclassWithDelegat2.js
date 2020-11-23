@@ -30,17 +30,9 @@ class Bird{
 }
 
 class NorwegianBludParrot extends Bird{
-    constructor(data){
-        super(data);
-        this._voltage = data.voltage;
-        this._isNailed = data.isNailed;
-    }
     get plumage(){
         if(this._voltage > 100) return "그을렸다";
         else return this._plumage || "예쁘다";
-    }
-    get airSpeedVelocity(){
-        return (this._isNailed) ? 0 : 10 + this._voltage / 10;
     }
 }
 
@@ -51,5 +43,15 @@ class EuropeanSwallowDelegate {
 class AfricanSwallowDelegate {
     get airSpeedVelocity() {
        return 40 - 2 * this._numberOfCoconuts;
+    }
+}
+
+class NorwegianBludParrotDelegate {
+    constructor(data){
+        this._voltage = data.voltage;
+        this._isNailed = data.isNailed;
+    }
+    get airSpeedVelocity() {
+       return (this._isNailed) ? 0 : 10 + this._voltage / 10;
     }
 }
