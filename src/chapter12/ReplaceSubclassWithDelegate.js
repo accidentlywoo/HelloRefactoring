@@ -33,6 +33,10 @@ class PremiumBooking extends Booking{
     get hasDinner(){
         return this._extras.hasOwnProperty('dinner') && !this.isPeakDay;
     }
+
+    get hasTalkback(){
+        return this._premiumDelegate.hasTalkback;
+    }
 }
 
 class PremiumBookingDelegate{
