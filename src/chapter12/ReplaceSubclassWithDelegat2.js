@@ -35,14 +35,14 @@ class NorwegianBludParrot extends Bird{
     }
 }
 
-class EuropeanSwallowDelegate {
+class EuropeanSwallowDelegate extends SpeciesDelegate {
     get plumage(){
         return this._plumage || '보통이다';
     }
     get airSpeedVelocity() {return 35;}
 }
 
-class AfricanSwallowDelegate {
+class AfricanSwallowDelegate extends SpeciesDelegate {
     get plumage(){
         return this._plumage || '보통이다';
     }
@@ -51,7 +51,7 @@ class AfricanSwallowDelegate {
     }
 }
 
-class NorwegianBludParrotDelegate {
+class NorwegianBludParrotDelegate extends SpeciesDelegate {
     constructor(data,bird){
         this._bird = bird;
         this._voltage = data.voltage;
@@ -63,5 +63,13 @@ class NorwegianBludParrotDelegate {
     get plumage(){
         if(this._voltage > 100) return "그을렸다";
         else return this._plumage || "예쁘다";
+    }
+}
+class SpeciesDelegate {
+    constructor(data, bird){
+        this._bird = bird;
+    }
+    get plumage(){
+        return this._bird._plumage || "보통이다";
     }
 }
