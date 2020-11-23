@@ -22,7 +22,7 @@ class Bird{
     }
     get name() {return this._name;}
     get plumage(){
-        if(this._speciesDelegate)
+        if(this._speciesDelegate instanceof NorwegianBludParrotDelegate)
             return this._speciesDelegate.plumage;
         else
             return this._plumage || '보통이다';
