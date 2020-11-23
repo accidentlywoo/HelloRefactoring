@@ -33,11 +33,10 @@ class Bird{
 
 class AfricanSwallow extends Bird{
     constructor(data){
-        super(data);
         this._numberOfCoconuts = data.numberOfCoconuts;
     }
     get airSpeedVelocity(){
-        return 40 - 2 * this._numberOfCoconuts;
+        return this._speciesDelegate.airSpeedVelocity;
     }
 }
 
@@ -58,4 +57,10 @@ class NorwegianBludParrot extends Bird{
 
 class EuropeanSwallowDelegate {
     get airSpeedVelocity() {return 35;}
+}
+
+class AfricanSwallowDelegate {
+    get airSpeedVelocity() {
+       return 40 - 2 * this._numberOfCoconuts;
+    }
 }
