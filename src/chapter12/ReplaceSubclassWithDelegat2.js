@@ -22,7 +22,10 @@ class Bird{
     }
     get name() {return this._name;}
     get plumage(){
-        return this._plumage || '보통이다';
+        if(this._speciesDelegate)
+            return this._speciesDelegate.plumage;
+        else
+            return this._plumage || '보통이다';
     }
     get airSpeedVelocity(){
         return this._speciesDelegate ? this._speciesDelegate.airSpeedVelocity : null;
