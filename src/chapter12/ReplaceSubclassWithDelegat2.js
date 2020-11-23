@@ -1,11 +1,6 @@
 // 서브 클래스가 어려개 일때
 function createBird(data){
-    switch (data.type){
-        case '노르웨이 파랑 앵무' : 
-            return new NorwegianBludParrot(data);
-        default :
-            return new Bird(data);
-    }
+    return new Bird(data);
 }
 class Bird{
     constructor(data){
@@ -15,6 +10,10 @@ class Bird{
     }
     selectSpeciesDelegate(data){
         switch (data.type){
+            case '유럽 제비' : 
+                return new EuropeanSwallowDelegate(data, this);
+            case '아프리카 제비' : 
+                return new AfricanSwallowDelegate(data, this);
             case '노르웨이 파랑 앵무' : 
                 return new NorwegianBludParrotDelegate(data, this);
             default : return new SpeciesDelegate(data, this);
@@ -36,15 +35,13 @@ class NorwegianBludParrot extends Bird{
 }
 
 class EuropeanSwallowDelegate extends SpeciesDelegate {
-    get plumage(){
-        return this._plumage || '보통이다';
-    }
     get airSpeedVelocity() {return 35;}
 }
 
 class AfricanSwallowDelegate extends SpeciesDelegate {
-    get plumage(){
-        return this._plumage || '보통이다';
+    constructor(data,bird){
+        super(data, bird);
+        this._numberOfCoconuts = data._numberOfCoconuts;
     }
     get airSpeedVelocity() {
        return 40 - 2 * this._numberOfCoconuts;
