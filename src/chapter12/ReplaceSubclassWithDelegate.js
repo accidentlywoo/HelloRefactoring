@@ -11,9 +11,11 @@ class Booking {
     }
 
     get basePrice(){
+        let result = this._show.price;
+        if(this.isPeakDay) result += Math.round(result * 0.15);
         return (this._premiumDelegate)
-        ? this._premiumDelegate.basePrice 
-        : this._privateBasePrice;
+        ? this._premiumDelegate.extendBasePrice(result) 
+        : result;
     }
     get _privateBasePrice(){
         let result = this._show.price;
@@ -54,6 +56,9 @@ class PremiumBookingDelegate{
     }
     get basePrice(){
         return Math.round(this._host._privateBasePrice + this._extras.premiumFee);
+    }
+    extendBasePrice(base){
+        return Math.round(base + this._extras.premiumFee);
     }
 }
 
