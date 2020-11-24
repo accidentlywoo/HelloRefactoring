@@ -28,3 +28,10 @@ class Scroll {
         return this._lastCleaned.until(targetDate, ChronoUnit.DAYS);
     }
 }
+
+// Client
+const scrolls = aDocument
+    .map(record => new Scroll(record.id,
+                            record.catalogData.title,
+                            record.catalogData.tags,
+                            LocalDate.parse(record._lastCleaned)));
