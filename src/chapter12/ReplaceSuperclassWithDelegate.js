@@ -34,4 +34,6 @@ const scrolls = aDocument
     .map(record => new Scroll(record.id,
                             record.catalogData.title,
                             record.catalogData.tags,
-                            LocalDate.parse(record._lastCleaned)));
+                            LocalDate.parse(record._lastCleaned),
+                            record.catalogData.id,
+                            catalog));
